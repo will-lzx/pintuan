@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
+
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>{% block title %}{% endblock %}</title>
+        <link href="{% static 'favicon.ico' %}" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'css/weui.min.css' %}" type="text/css"/>
+    <meta name="description" content="砍价拼团商城">
+    <meta name="keywords" content="砍价，拼团，商城">
+
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/0.3.0/weui.css">
+
+    <link rel="stylesheet" href="/static/css/weui.min.css" rel="external nofollow" />
+ <link rel="stylesheet" href="/static/css/jquery-weui.css" rel="external nofollow" />
+ <script type="text/javascript" src="/static/js/jquery-2.1.4.js">
+ </script><script type="text/javascript" src="/static/js/jquery-weui.js"></script>
+
+</head>
+
+<body >
+
+{% block content %}
+{% endblock %}
+
+</body>

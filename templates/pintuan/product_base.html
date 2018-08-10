@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        <div>
+
+            <img class="gr_tx" src="{% static '/images/tx_test.jpg' %}" alt="产品图片">
+            <div>
+                <span>限时特惠</span>
+                <span>距离结束仅剩</span>
+            </div>
+            <span>欧缇丽葡萄籽抗氧化胶囊</span>
+
+        </div>
+
+
+
+        <div>
+            <a id="check_1_text" style="color: HSL(168, 45%, 56%)">品牌介绍</a>
+        </div>
+
+        <div>
+            <span>正品保障</span>
+            <span>售后无忧</span>
+            <span>7天保价</span>
+        </div>
+
+        <div class="page navbar js_show">
+            <div class="page__bd" style="height: 100%;">
+                <div class="weui-tab">
+                    <div class="weui-navbar">
+                        <div class="weui-navbar__item check_1">
+                            <a id="check_1_text" style="color: HSL(168, 45%, 56%)">图文介绍</a>
+                        </div>
+                        <div class="weui-navbar__item check_2">
+                            <a id="check_2_text" style="color:black">规格参数</a>
+                        </div>
+                    </div>
+                    <div class="weui-tab__panel">
+                        <div id="tab1">
+                            <span>
+                                品牌：欧缇丽CAUDALIE
+
+                                品名：欧缇丽葡萄籽抗氧化胶囊180粒
+
+                                规格：180粒/盒
+
+                                净重：146g/盒
+
+                                功能：抗氧化、增强皮肤耐受力、调理肤质、防敏感等
+
+                                成分：总葡萄萃取物、葡萄籽油、初榨琉璃苣油、初榨月见草油、蛋白质、碳水化合物、脂肪
+
+                                适用肤质：所有肤质
+
+                                储存方式：放置于通风位置
+
+                                保质期：730天
+
+                                产地：法国
+                            </span>
+                        </div>
+                        <div style="display:none" id="tab2">
+                            <span>
+                                品牌：欧缇丽CAUDALIE
+
+                                品名：欧缇丽葡萄籽抗氧化胶囊180粒
+
+                                规格：180粒/盒
+
+                                净重：146g/盒
+
+                                功能：抗氧化、增强皮肤耐受力、调理肤质、防敏感等
+
+                                成分：总葡萄萃取物、葡萄籽油、初榨琉璃苣油、初榨月见草油、蛋白质、碳水化合物、脂肪
+
+                                适用肤质：所有肤质
+
+                                储存方式：放置于通风位置
+
+                                保质期：730天
+
+                                包装尺寸：12.5cm×5cm×8.5cm
+
+                                产地：法国
+
+                                厂商指导价：555元
+
+                                价格说明：
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="" >原价购买</a>
+            <a href="" >拼团价购买</a>
+        </div>
+
+
+    </div>
+
+    <script>
+        $(".check_1").click(function() {
+            $(".check_1").addClass("weui-bar__item_on");
+            $(".check_2").removeClass("weui-bar__item_on");
+            $("#check_1_text").css("color", "#5DC2AD");
+            $("#check_2_text").css("color", "black");
+            $('#tab1').show();
+            $('#tab2').hide();
+        });
+
+        $(".check_2").click(function() {
+            $(".check_2").addClass("weui-bar__item_on");
+            $(".check_1").removeClass("weui-bar__item_on");
+            $("#check_1_text").css("color", "black");
+            $("#check_2_text").css("color", "#5DC2AD");
+            $('#tab1').hide();
+            $('#tab2').show();
+        });
+    </script>
+
+{% endblock %}
