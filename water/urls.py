@@ -29,5 +29,5 @@ urlpatterns = [
 
     url(r'^privatecenter/$', views.privatecenter, name='privatecenter'),
 
-    url(r'^production/(?P<production_type>.+)/$', views.production, name='production'),
+    url(r'^production/$', views.production, name='production'),
 ]

@@ -98,12 +98,8 @@ def privatecenter(request):
     return response
 
 
-def production(request, production_type):
-    if str(production_type) == '0':
-        template_name = 'water/production1.html'
-    elif str(production_type) == '1':
-        template_name = 'water/production2.html'
-    else:
-        template_name = 'water/production1.html'
+def production(request):
+    template_name = 'water/production.html'
+
     response = render(request, template_name)
     return response

@@ -38,13 +38,8 @@ class UrlRequest:
                     "sub_button": [
                         {
                             "type": "view",
-                            "name": "I型水机",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fproduction%2F0%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
-                        },
-                        {
-                            "type": "view",
-                            "name": "II型水机",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fproduction%2F1%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
+                            "name": "I~II型水机",
+                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fproduction%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
                         }
                     ]
 
