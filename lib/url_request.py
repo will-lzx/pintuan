@@ -3,7 +3,7 @@ import urllib.request
 import urllib.parse
 import json
 
-from friendplatform.settings import WEIXIN_APPID, WEIXIN_APPSECRET
+from pintuan.settings import WEIXIN_APPID, WEIXIN_APPSECRET
 from lib.sql_help import MySQL
 
 
@@ -39,12 +39,12 @@ class UrlRequest:
                         {
                             "type": "view",
                             "name": "I型水机",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Flatest%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
+                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fproduction%2F0%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
                         },
                         {
                             "type": "view",
                             "name": "II型水机",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fhistory%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
+                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fproduction%2F1%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
                         }
                     ]
 
@@ -56,12 +56,12 @@ class UrlRequest:
                         {
                             "type": "view",
                             "name": "代理",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fexpert%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
+                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fagent%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
                         },
                         {
                             "type": "view",
                             "name": "购买",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fbeauty%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
+                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fbuy%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(WEIXIN_APPID)
                         }
                     ]
 
@@ -85,7 +85,7 @@ class UrlRequest:
                         {
                             "type": "view",
                             "name": "建议与反馈",
-                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Fissue%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(
+                            "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid={}&redirect_uri=http%3A%2F%2Frelalive.com%2Fwater%2Ffeedback%2F&response_type=code&scope=snsapi_base&state=123&connect_redirect=1#wechat_redirect".format(
                                 WEIXIN_APPID)
                             # "url": "http://182.61.21.208/weixin/create1/"
                         },
