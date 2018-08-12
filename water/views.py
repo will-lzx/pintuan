@@ -107,6 +107,7 @@ def production(request):
     return response
 
 
+@csrf_exempt
 def save_issue(request):
     open_id = get_open_id(request)
     if request.method == 'POST':
