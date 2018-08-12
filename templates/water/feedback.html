@@ -1,8 +1,50 @@
 {% extends 'base.html' %}
 
+{% block content %}
+    <form id="fm" action="/water/save_issue/" method="post" style="margin:0;padding:10px">
 
-{% block  content%}
+        <div class="weui-cell">
+            <div class="weui-cell__bd">
+                <h2 class="issue-title">建议与反馈</h2>
+            </div>
+{#            <div class="weui-cell__ft">说明文字</div>#}
+        </div>
 
-    <span>建议与反馈</span>
+        <div class="weui-cell">
+            <div class="weui-cell weui-cell_select weui-cell_select-before">
+                <div class="weui-cell__hd">
+                    <select class="weui-select" name="issue-type">
+                        <option value="1">建议</option>
+                        <option value="2">问题反馈</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" id="issue" name="issue" placeholder="请输入建议或反馈" required rows="10"></textarea>
+                    <div class="weui-textarea-counter"><span id="textareaLength">0</span>/150</div>
+                </div>
+            </div>
+        </div>
+
+        <input class="weui-btn weui-btn_primary" type="submit" value="保存">
+
+    </form>
+
+    <script>
+        $('#issue').bind('input propertychange', function () {
+            var fizeNum = $(this).val().length;
+            if (fizeNum > 150) {
+                var char = $(this).val();
+                char = char.substr(0, 150);
+                $(this).val(char);
+                fizeNum = 150;
+                alert('消息内容不能超过150字');
+            }
+            $(this).parent().find('#textareaLength').text(fizeNum);
+        })
+    </script>
 {% endblock %}

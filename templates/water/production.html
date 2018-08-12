@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block  content%}
 
-    <span>产品1</span>
+
+
+    <div>
+        <h1>共享水机</h1>
+        <span>关爱民生  共享健康</span>
+        <h3>净水器进入共享时代</h3>
+        <h2>
+            共享水机是共享经济全国火爆的大环境所产生的一种全新行业模式。
+            从共享单车，充电宝，雨伞，篮球到宝马。。。。。。
+            实际共享经济中，老百姓得到了更多的优惠和服务！
+            有了共享单车，我们还需要自行车吗？
+        </h2>
+        <img src="{% static 'media/pic1.png' %}">
+        <img src="{% static 'media/pic2.png' %}">
+        <img src="{% static 'media/pic3.png' %}">
+
+    </div>
 
 {% endblock %}

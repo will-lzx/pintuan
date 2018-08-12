@@ -30,4 +30,7 @@ urlpatterns = [
     url(r'^privatecenter/$', views.privatecenter, name='privatecenter'),
 
     url(r'^production/$', views.production, name='production'),
+
+    url(r'^save_issue/$', views.save_issue, name='save_issue'),
+
 ]

@@ -1,6 +1,7 @@
 import logging
 
-from django.http import HttpResponse
+import datetime
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,8 +11,9 @@ from wechatpy.events import SubscribeEvent
 from wechatpy.exceptions import InvalidSignatureException
 from wechatpy.utils import check_signature
 
-from lib.common import create_timestamp, subcribe_save_openid
+from lib.common import create_timestamp, subcribe_save_openid, get_openid
 from pintuan.settings import *
+from water.models import Issue
 
 log = logging.getLogger('django')
 
@@ -103,3 +105,37 @@ def production(request):
 
     response = render(request, template_name)
     return response
+
+
+def save_issue(request):
+    open_id = get_open_id(request)
+    if request.method == 'POST':
+        issue_type = request.POST.get('issue-type', None)
+        description = request.POST.get('issue', None)
+
+        issue_dict = {'issue_type': issue_type,
+                      'description': description,
+                      'owner': open_id,
+                      'createtime': datetime.datetime.now()}
+
+        try:
+            Issue.objects.create(**issue_dict)
+        except Exception as ex:
+            print(str(ex))
+            return HttpResponseRedirect('/water/exception/')
+
+        return HttpResponseRedirect('/water/privatecenter/')
+
+
+def get_open_id(request):
+    code = request.GET.get('code', None)
+
+    if code and not request.session.get('openid', default=None):
+        openid = get_openid(code)
+        request.session['openid'] = openid
+        print('save session', openid)
+    else:
+        openid = request.session.get('openid', default=None)
+        print('session get', openid)
+
+    return openid
