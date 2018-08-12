@@ -2,7 +2,7 @@ import logging
 
 import datetime
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
@@ -129,7 +129,7 @@ def save_issue(request):
             Issue.objects.create(**issue_dict)
         except Exception as ex:
             print(str(ex))
-            return HttpResponseRedirect('/water/exception/', context={'exception': str(ex)})
+            return render_to_response('water/exception.html', {'exception': str(ex)})
 
         return HttpResponseRedirect('/water/privatecenter/')
 
