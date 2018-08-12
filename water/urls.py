@@ -27,6 +27,8 @@ urlpatterns = [
 
     url(r'^feedback/$', views.feedback, name='feedback'),
 
+    url(r'^exception/$', views.exception, name='exception'),
+
     url(r'^privatecenter/$', views.privatecenter, name='privatecenter'),
 
     url(r'^production/$', views.production, name='production'),

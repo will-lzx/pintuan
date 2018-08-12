@@ -94,6 +94,12 @@ def feedback(request):
     return response
 
 
+def exception(request):
+    template_name = 'water/exception.html'
+    response = render(request, template_name)
+    return response
+
+
 def privatecenter(request):
     template_name = 'water/privatecenter.html'
     response = render(request, template_name)
@@ -123,7 +129,7 @@ def save_issue(request):
             Issue.objects.create(**issue_dict)
         except Exception as ex:
             print(str(ex))
-            return HttpResponseRedirect('/water/exception/')
+            return HttpResponseRedirect('/water/exception/', context={'exception': str(ex)})
 
         return HttpResponseRedirect('/water/privatecenter/')
 
